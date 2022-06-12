@@ -1,6 +1,7 @@
 # Git for Windows
 
-+ 1. download git
++ download git
+
 [download url](https://git-scm.com/download/win)
 
-+ 2. setup on windows
++ setup on windows
