@@ -348,13 +348,16 @@ git log
 ## 14. new PR
 
 from your GitHub/Gitee repository, you can look at 'Pull requests'
+
 then click on that button, you will see "Welcome to pull requests!"
+
 then you can click on the right direction "New pull request"
 
 by this, your code branch will be merge if you fix bugs or updates
 
 So, as you can see, this is the most popular styles of IT programmers and coders.
-Contributing your code to opensource is just easy.
+
+Contributing your code to opensource is just so easy.
 
 ## 15. follow your email
 
@@ -386,7 +389,7 @@ git stash pop
 
 + about git's blog
 
-[git submits code to ones own repositor](https://blog.csdn.net/frdevolcqzyxynjds/article/details/117598717)
+[git submits code to ones own repository](https://blog.csdn.net/frdevolcqzyxynjds/article/details/117598717)
 
 
 + demo case
