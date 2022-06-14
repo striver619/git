@@ -1,4 +1,4 @@
-# git
+# [Git](https://git-scm.com/)
 
 how to use git from zero to one?
 
@@ -404,3 +404,10 @@ git push
 git status
 ```
 
+## [About Git](https://git-scm.com/about)
+
+## [Git Document](https://git-scm.com/doc)
+
++ [Git Book](https://git-scm.com/book/en/v2)
+
++ [What is Git?](https://git-scm.com/video/what-is-git)
