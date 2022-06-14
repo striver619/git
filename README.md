@@ -227,6 +227,16 @@ nothing to commit, working tree clean
 [git@github git]$
 ```
 
+by the way, you can also use this way
+
+```shell
+git commit
+```
+
+but, you should edit the commit changes, which changelog
+
+then save just like use Vim editor
+
 ## 11. git pull
 
 before you git push, you have to 'git pull' to update your repository
