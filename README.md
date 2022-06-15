@@ -49,29 +49,17 @@ or
 set your title
 paste public key to SSH keys
 
-## 3. by GitHub/Gitee Dashboard '+' to New repository
 
-## 4. from your repository's index page, copy repository's address
+## 3. configure your localhost git client account and email
 
-+ click on [Code]
-
-you will look at this repository's address
-
-eg.
-   https://github.com/striver619/git.git
-
-then copy it
-
-## 5. configure your localhost git client account and email
-
-+ way1
+- way1
 
 ```shell
 git config --global user.name "your-account"
 git config --global user.email "your-email@xxx.com"
 ```
 
-+ way2
+- way2
 
 ```shell
 [git@github github]$ vim ~/.gitconfig 
@@ -95,13 +83,26 @@ Hi striver619! You've successfully authenticated, but GitHub does not provide sh
 [git@github github]$ 
 ```
 
+## 4. by GitHub/Gitee Dashboard '+' to New repository
+
+## 5. from your repository's index page, copy repository's address
+
+click on [Code]
+
+you will look at this repository's address
+
+eg.
+- HTTPS   https://github.com/striver619/git.git
+- SSH     git@github.com/striver619/git.git
+
+then copy it
+
 ## 6. git clone GitHub/Gitee repository
 
-+ fork team's/someone's repository
+- fork team's/someone's repository
+  you should [fork] from your repository at first!
 
-you should [fork] from your repository at first!
-
-+ clone your repository
+- clone to your localhost repository
 
 eg.
 
@@ -109,8 +110,15 @@ eg.
 git clone https://github.com/striver619/git.git
 ```
 
-show all effect
+you can also use this way, then you will not configure remote set-url
 
+```shell
+git clone git@github.com/striver619/git.git
+```
+
+
+
+- show all effect
 ```shell
 [git@github github]$ git clone https://github.com/striver619/git.git
 Cloning into 'git'...
@@ -118,24 +126,33 @@ remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), 619 bytes | 619.00 KiB/s, done.
-[git@github github]$ ls -la
-total 16
-drwxr-xr-x.  4 qc qc 4096 Jun 12 14:52 .
-drwx------. 26 qc qc 4096 Jun 12 14:28 ..
-drwxr-xr-x.  3 qc qc 4096 Jun 12 14:52 git
+[git@github github]$
+```
+```shell
+[git@github github]$ git clone git@github.com/striver619/git.git
+Cloning into 'git'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 619 bytes | 619.00 KiB/s, done.
 [git@github github]$
 ```
 
 ## 7. edit your repository's files on your localhost
 
-+ change directory tou your localhost's repository
+- change directory tou your localhost's repository
 
 ```shell
+[git@github github]$ ls -la
+total 16
+drwxr-xr-x.  4 qc qc 4096 Jun 12 14:52 .
+drwx------. 26 qc qc 4096 Jun 12 14:28 ..
+drwxr-xr-x.  3 qc qc 4096 Jun 12 14:52 git
 [git@github github]$ cd git/
 [git@github git]$
 ```
 
-+ look at this repository's includings
+- look at this repository's includings
 
 ```shell
 [git@github git]$ ls -la
@@ -147,11 +164,11 @@ drwxr-xr-x. 8 qc qc 4096 Jun 12 14:52 .git
 [git@github git]$
 ```
 
-+ you can new files or update files from this directory
+- you can new files or edit files from this directory
 
 ## 8. git status
 
-+ when you edit finished, use this command look at difference
+- when you edit finished, use this command look at repository branch update
 
 ```shell
 git status
@@ -174,15 +191,15 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ## 9. git add
 
-+ add your update's files to local repository
+- add your update's files to local repository
 
-you can use this command
+use this command
 
 ```shell
 git add filename
 ```
 
-or you can also use this command
+or you can also use it
 
 ```shell
 git add .
@@ -191,7 +208,7 @@ git add .
 eg.
 
 ```shell
-[git@github git]$ git add README.en.md 
+[git@github git]$ git add .
 [git@github git]$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -308,6 +325,9 @@ if you do not set 'set-url', when you 'git push' you will look at this,
 when you input Username, Password then "fatal: Authentication failed"
 as you can see, this is the GitHub's/Gitee's bug
 
+in addition, if you use 'git clone git@github.com/striver619/git.git',
+you can not 'git remote set-url'
+
 ```shell
 [git@github git]$ git push -u origin main
 Username for 'https://github.com': striver619
@@ -376,13 +396,13 @@ your email will receive an email.
 
 eg.
 
-Merged #01 into master.
+> Merged #01 into master.
 
 ## 16. you can also new a issue or discussion on GitHub's/Gitee's Dashboard
 
 ## 17. git's others
 
-+ solve rebase error
+- solve rebase error
 
 ```shell
 git pull --rebase
@@ -397,13 +417,12 @@ git pull --rebase
 git stash pop
 ```
 
-+ about git's blog
+- about git's blog
 
 [git submits code to ones own repository](https://blog.csdn.net/frdevolcqzyxynjds/article/details/117598717)
 
 
-+ demo case
-
+- demo case1
 ```
 git status
 git pull
@@ -412,6 +431,67 @@ git add file-demo
 git commit
 git push
 git status
+```
+
+- demo case2
+```
+git@github github % git clone git@github.com:striver619/demo.git
+Cloning into 'demo'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+git@github github %
+git@github github % cd demo
+git@github demo % git remote -v
+origin  git@github.com:striver619/demo.git (fetch)
+origin  git@github.com:striver619/demo.git (push)
+git@github demo %
+git@github demo % ll
+total 4.0K
+-rw-r--r--. 1 demo demo 48 Jun 15 08:50 README.md
+git@github demo %
+git@github demo % vim README.md
+git@github demo %
+git@github demo % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git@github demo % git add .
+git@github demo % git commit
+[main 052871e] init README
+ 1 file changed, 7 insertions(+)
+git@github demo % git pull
+Already up to date.
+git@github demo % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 430 bytes | 430.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:striver619/demo.git
+   d9a918b..052871e  main -> main
+git@github demo %
+git@github demo % git log
+commit 052871e5a6b7e6fe123a0325868aea0bbca1b5df (HEAD -> main, origin/main, origin/HEAD)
+Author: striver619 <demo@xxx.com>
+Date:   Wed Jun 15 08:57:09 2022 +0800
+
+    init README
+
+commit d9a918bc8dc547b5e07fba30c2368d8ef9afa0d4
+Author: striver619 <51977051+striver619@users.noreply.github.com>
+Date:   Wed Jun 15 08:46:22 2022 +0800
+
+    Initial commit
+git@github demo %
 ```
 
 ## [About Git](https://git-scm.com/about)
