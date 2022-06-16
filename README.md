@@ -303,6 +303,86 @@ first look at local repository's remote
 git remote -v
 ```
 
+---
+
+if you use this, you can not set-url
+
+```shell
+git clone git@github.com/striver619/git.git
+```
+
+if not, we suggest you can learn these as follows:
+
+- modify your repository's remote origin address
+```
+git@github git % git remote -v
+origin  git+ssh://git@github.com/striver619/git.git (fetch)
+origin  git+ssh://git@github.com/striver619/git.git (push)
+git@github git %
+git@github git % git remote set-url origin git@github.com:striver619/git_demo.git
+git@github git % git remote -v
+origin  git@github.com:striver619/git_demo.git (fetch)
+origin  git@github.com:striver619/git_demo.git (push)
+git@github git %
+```
+- add your repository's remote upstream address
+```shell
+git@github git % git remote add upstream git@github.com:striver619/git.git
+git@github git % git remote -v
+origin  git@github.com:striver619/git_demo.git (fetch)
+origin  git@github.com:striver619/git_demo.git (push)
+upstream        git@github.com:striver619/git.git (fetch)
+upstream        git@github.com:striver619/git.git (push)
+git@github git %
+```
+
+- modify your repository's remote upstream address
+```shell
+git@github git % git remote set-url upstream git@github.com:A/git.git
+git@github git % git remote -v
+origin  git@github.com:striver619/git_demo.git (fetch)
+origin  git@github.com:striver619/git_demo.git (push)
+upstream        git@github.com:A/git.git (fetch)
+upstream        git@github.com:A/git.git (push)
+git@github git %
+```
+
+- modify your repository's remote origin address
+```shell
+git@github git % git remote set-url origin git@github.com:B/git.git
+git@github git % git remote -v
+origin  git@github.com:B/git.git (fetch)
+origin  git@github.com:B/git.git (push)
+upstream        git@github.com:A/git.git (fetch)
+upstream        git@github.com:A/git.git (push)
+git@github git %
+```
+
+- remove your repository's remote upstream address
+```shell
+git@github git % git remote remove upstream
+git@github git % git remote -v
+origin  git@github.com:B/git.git (fetch)
+origin  git@github.com:B/git.git (push)
+git@github git %
+```
+
+- remove your repository's remote upstream/origin address
+```shell
+git@github git % git remote remove origin
+git@github git %
+git@github git % git remote -v
+git@github git %
+```
+
+---
+
+if you use this, you should set-url
+
+```shell
+git clone https://github.com/striver619/git.git
+```
+
 ```shell
 git remote set-url origin git+ssh://git@github.com/striver619/git.git
 ```
