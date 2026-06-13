@@ -83,6 +83,48 @@ Hi striver619! You've successfully authenticated, but GitHub does not provide sh
 [git@github github]$ 
 ```
 
+- update use old well key to new machine
+
+```
+# new add id_rsa-github.pub & id_rsa-github into ~/.ssh/ directory
+
+
+qc@windows MINGW64 ~/.ssh
+$ ll
+total 26
+-rw-r--r-- 1 qc 1049089  987 Jun 13 11:01 authorized_keys
+-rw-r--r-- 1 qc 1049089  599 Jun 13 11:10 config
+-rw-r--r-- 1 qc 1049089 2622 May 15 11:03 id_rsa
+-rw-r--r-- 1 qc 1049089 1831 Jun 13 11:01 id_rsa-github
+-rw-r--r-- 1 qc 1049089  405 Jun 13 11:06 id_rsa-github.pub
+-rw-r--r-- 1 qc 1049089  581 May 15 11:03 id_rsa.pub
+-rw-r--r-- 1 qc 1049089 2203 Jun 13 11:04 known_hosts
+
+qc@windows MINGW64 ~/.ssh
+$ cat config |tail -6
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa-github
+    IdentitiesOnly yes
+
+qc@windows MINGW64 ~/.ssh
+$ cat ~/.gitconfig
+[user]
+        name = {your github account}
+        email = {your github email}
+[safe]
+        directory = *
+
+qc@windows MINGW64 ~/.ssh
+$ ssh -T git@github.com
+Hi striver619! You've successfully authenticated, but GitHub does not provide shell access.
+
+qc@windows MINGW64 ~/.ssh
+$
+```
+
 ## 4. by GitHub/Gitee Dashboard '+' to New repository
 
 ## 5. from your repository's index page, copy repository's address
